@@ -38,9 +38,10 @@ def createDifficultyTable(results_list):
     table.field_names = ["Difficulty", "Count", "Average Reward", "Average Loss"]
 
     # Add the rows to the table
-    table.add_row(["Easy", difficultyCount[0], difficultyReward[0] / difficultyCount[0] if difficultyCount[0] != 0 else "-", difficultyLoss[0] / difficultyCount[0] if difficultyCount[0] != 0 else "-"])
-    table.add_row(["Medium", difficultyCount[1], difficultyReward[1] / difficultyCount[1] if difficultyCount[1] != 0 else "-", difficultyLoss[1] / difficultyCount[1] if difficultyCount[1] != 0 else "-"])
-    table.add_row(["Hard", difficultyCount[2], difficultyReward[2] / difficultyCount[2] if difficultyCount[2] != 0 else "-", difficultyLoss[2] / difficultyCount[2] if difficultyCount[2] != 0 else "-"])
+    #round(difficultyReward[0] / difficultyCount[0], 2)
+    table.add_row(["Easy", difficultyCount[0], round(difficultyReward[0] / difficultyCount[0], 2) if difficultyCount[0] != 0 else "-", round(difficultyLoss[0] / difficultyCount[0], 2) if difficultyCount[0] != 0 else "-"])
+    table.add_row(["Medium", difficultyCount[1], round(difficultyReward[1] / difficultyCount[1], 2) if difficultyCount[1] != 0 else "-", round(difficultyLoss[1] / difficultyCount[1], 2) if difficultyCount[1] != 0 else "-"])
+    table.add_row(["Hard", difficultyCount[2], round(difficultyReward[2] / difficultyCount[2], 2) if difficultyCount[2] != 0 else "-", round(difficultyLoss[2] / difficultyCount[2], 2) if difficultyCount[2] != 0 else "-"])
 
     # Print the table
     print(table)
@@ -104,10 +105,10 @@ def main():
 
         value2 = input("Ghost: ").lower()
         value3 = input("Reward: ").lower()
-        value3 = input("Loss: ").lower()
+        value4 = input("Loss: ").lower()
 
         # Create a new array for the user inputs and add it to the values list
-        user_inputs = [value1, value2, value3]
+        user_inputs = [value1, value2, value3, value4]
         values_list.append(user_inputs)
 
 
